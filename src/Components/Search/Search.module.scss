@@ -1,0 +1,33 @@
+.wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 6px;
+}
+
+.searchInput {
+	background-color: #010409 ;
+	color: #bec5cd;
+	box-sizing: border-box;
+	height: 28px;
+	font-size: 14px;
+	padding: 14px 12px;
+	border: 1px solid #30363d;
+	border-radius: 6px;
+	outline: none;
+}
+
+.button {
+	background-color: inherit;
+	height: 28px;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 1.5px;
+	border: 1px solid rgb(190, 197, 205, .1);
+	box-sizing: border-box;
+	transition: .3s;
+	
+	&:hover {
+		background-color: #2b3340;
+	}
+}

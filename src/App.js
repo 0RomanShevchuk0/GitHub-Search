@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
 
-function App() {
+import styles from './App.module.scss';
+
+import Search from './Components/Search/Search';
+import UserProfile from './Components/UserProfile/UserProfile';
+import UsersList from './Components/UsersList/UserList';
+
+
+const App = () => {
+
+	const [selectedUser, setSelectedUser] = useState(null);
+	const [finalSearch, setFinalSearch] = useState('user');
+
+	useEffect(() => {
+		if(selectedUser) {
+			document.title = selectedUser.login;
+		}
+	}, [selectedUser]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+			<div className={styles.wrapper}>
+				<div className={styles.sidebar}>
+					<Search 
+						setFinalSearch={setFinalSearch} 
+						value={finalSearch} 
+						/>
+					<UsersList 
+						selectedUser={selectedUser} 
+						setSelectedUser={setSelectedUser} 
+						finalSearch={finalSearch}
+						/>
+				</div>
+				<div className={styles.userProfile}>
+					{selectedUser && <UserProfile selectedUser={selectedUser} setSelectedUser={setSelectedUser} />}
+				</div>
+			</div>
     </div>
   );
 }

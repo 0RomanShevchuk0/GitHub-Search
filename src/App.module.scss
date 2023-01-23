@@ -1,0 +1,48 @@
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	max-height: 1000px;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 16px;
+	width: clamp(20rem, 100vw, 81.25rem);
+	background-color: #010409;
+	color: #bec5cd;
+	border-radius: 12px;
+}
+
+.sidebar {
+	max-width: 300px;
+	background-color: #0d1117;
+	padding:16px 10px 4px 10px;
+	border-radius: 12px;
+	border-right: 1px solid #21262d;
+	box-sizing: border-box;
+}
+
+.userProfile {
+	padding: 16px 0px;
+}
+
+
+//* Scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color: rgb(66, 63, 63);
+  border-radius: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(205, 199, 199);
+  border-radius: 12px;
+}
