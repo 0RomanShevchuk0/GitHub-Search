@@ -49,7 +49,6 @@ const App = () => {
 		let windowWidth = window.innerWidth;
 		const onResize = () => {
 			if(window.innerWidth != windowWidth) {
-				alert('схуяли');
 				if(window.innerWidth < 768) {
 					console.log('less than 768');
 					setIsBurgerHidden(true);

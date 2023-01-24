@@ -58,9 +58,13 @@
 	border-right: 1px solid #21262d;
 	box-sizing: border-box;
 	transition: .4s;
+	opacity: 1;
+	visibility: visible;
 	
 	&.hidden {
-		margin-left: -305px;
+		margin-left: -320px;
+		opacity: 0;
+		visibility: hidden;
 	}
 }
 
