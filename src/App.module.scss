@@ -16,6 +16,7 @@
 	color: #bec5cd;
 	border-radius: 12px;
 	transition: .4s;
+	min-height: 90vh;
 
 	&.hidden {
 		grid-template-columns: 0fr 3fr;
@@ -26,7 +27,7 @@
 	background: none;
 	position: absolute;
 	top: calc(20px - 4px);
-	left: calc(300px - 15px);
+	left: calc(305px - 0px);
 	padding: 0px 0px;
 	border: none;
 	box-sizing: border-box;
@@ -34,6 +35,7 @@
 	height: 30px;
 	transition: .4s;
 	transform: rotate(-180deg);
+	z-index: 100;
 
 	&.hidden {
 		left: 0;
@@ -58,7 +60,7 @@
 	transition: .4s;
 	
 	&.hidden {
-		margin-left: -400px;
+		margin-left: -305px;
 	}
 }
 
@@ -66,6 +68,22 @@
 	padding: 16px 0px;
 }
 
+
+@media(width < 768px) {
+	.burger {
+		display: block;
+	}
+
+	.wrapper {
+		display: block;
+	}
+
+	.sidebar {
+		max-width: none;
+		position: absolute;
+		z-index: 10;
+	}
+}
 
 //* Scrollbar
 ::-webkit-scrollbar {
@@ -82,21 +100,4 @@
 ::-webkit-scrollbar-thumb {
   background: rgb(205, 199, 199);
   border-radius: 12px;
-}
-
-@media(width < 768px) {
-	.burger {
-		display: block;
-	}
-
-	.wrapper {
-		display: block;
-		min-height: 90vh;
-	}
-
-	.sidebar {
-		max-width: none;
-		position: absolute;
-		z-index: 10;
-	}
 }

@@ -8,6 +8,7 @@ import separatorIcon from '../../assets/images/UserProfile/separator.png';
 import locationIcon from '../../assets/images/UserProfile/location.png';
 
 import Timer from "./Timer/Timer";
+import Loader from "../../common/Loader/Loader";
 
 
 const UserProfile = (props) => {
@@ -23,7 +24,7 @@ const UserProfile = (props) => {
 
   return (
     <div className={styles.wrapper}>
-      {userDetails && (
+      {userDetails ? (
         <div className={styles.profile}>
 					<div className={styles.head}>
 						<div className="">
@@ -67,7 +68,7 @@ const UserProfile = (props) => {
 						</div>
 					</div>
 				</div>
-      )}
+      ) : <Loader />}
 			<div className={styles.timer}>
         <Timer
           selectedUser={props.selectedUser}

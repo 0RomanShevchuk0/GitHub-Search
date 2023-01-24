@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+
 import styles from  './UsersList.module.scss';
+
+import Loader from '../../common/Loader/Loader';
 
 
 const UsersList = (props) => {
@@ -12,7 +15,7 @@ const UsersList = (props) => {
 	}, [props.finalSearch]);
 
 
-	if(!users) return <h1>loading...</h1>;
+	if(!users) return <Loader />;
 
 	let usersElements = users.map(user => 
 		<li 

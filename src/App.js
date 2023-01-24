@@ -17,9 +17,12 @@ const App = () => {
 	useEffect(() => {
 		if(selectedUser) {
 			document.title = selectedUser.login;
-			if(window.innerWidth < 768) {
-				setIsBurgerHidden(true);
-			}
+		}
+	}, [selectedUser]);
+
+	useEffect(() => {
+		if(window.innerWidth < 768) {
+			setIsBurgerHidden(true);
 		}
 	}, [selectedUser]);
 
@@ -53,10 +56,8 @@ const App = () => {
 				setIsBurgerHidden(false);
 			}
 		} 
-		window.addEventListener('load', onResize);
 		window.addEventListener('resize', onResize);
 		return () => {
-			window.removeEventListener('load', onResize)
 			window.removeEventListener('resize', onResize)
 		};
 	})
