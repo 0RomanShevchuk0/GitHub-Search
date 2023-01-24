@@ -7,7 +7,7 @@ import followsIcon from '../../assets/images/UserProfile/follows.png';
 import separatorIcon from '../../assets/images/UserProfile/separator.png';
 import locationIcon from '../../assets/images/UserProfile/location.png';
 
-import Timer from "./Timer";
+import Timer from "./Timer/Timer";
 
 
 const UserProfile = (props) => {
@@ -31,7 +31,7 @@ const UserProfile = (props) => {
 						</div>
 						<div className={styles.info}>
 							<div className={styles.mainInfo}>
-								<div className={styles.name}>{userDetails.name}</div>
+								<div className={styles.name}>{userDetails.name ? userDetails.name : 'username'}</div>
 								<div className="toGitHub">
 									<a 
 										className={styles.toGithub}  

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import styles from './Timer.module.scss'
+
 
 const Timer = (props) => {
 	
@@ -16,7 +18,7 @@ const Timer = (props) => {
 	}, [props.selectedUser]);
 
   return (
-		<div className="wrapper">
+		<div className={styles.wrapper}>
 			You've been viewing this profile for 
 			{seconds >= 60 && ` ${Math.floor(seconds / 60)} minutes`} {seconds % 60} seconds
 		</div>
