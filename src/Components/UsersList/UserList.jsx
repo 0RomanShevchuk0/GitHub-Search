@@ -15,7 +15,13 @@ const UsersList = (props) => {
 	}, [props.finalSearch]);
 
 
-	if(!users) return <Loader />;
+	if(!users) {
+		return (
+			<div className={styles.wrapper}>
+				<Loader />
+			</div>
+		);
+	}
 
 	let usersElements = users.map(user => 
 		<li 

@@ -7,6 +7,7 @@
 }
 
 .wrapper {
+	min-height: 90vh;
 	position: relative;
 	display: grid;
 	grid-template-columns: 1fr 3fr;
@@ -16,7 +17,6 @@
 	color: #bec5cd;
 	border-radius: 12px;
 	transition: .4s;
-	min-height: 90vh;
 
 	&.hidden {
 		grid-template-columns: 0fr 3fr;

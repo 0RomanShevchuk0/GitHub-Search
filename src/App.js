@@ -46,19 +46,23 @@ const App = () => {
 	},[isBurgerHidden])
 
 	useEffect(() => {
+		let windowWidth = window.innerWidth;
 		const onResize = () => {
-			if(window.innerWidth < 768) {
-				console.log('less than 768');
-				setIsBurgerHidden(true);
-			}
-			else {
-				console.log('more than 768');
-				setIsBurgerHidden(false);
-			}
-		} 
-		window.addEventListener('resize', onResize);
-		return () => {
-			window.removeEventListener('resize', onResize)
+			if(window.innerWidth != windowWidth) {
+				alert('схуяли');
+				if(window.innerWidth < 768) {
+					console.log('less than 768');
+					setIsBurgerHidden(true);
+				}
+				else {
+					console.log('more than 768');
+					setIsBurgerHidden(false);
+				}
+			} 
+		}
+			window.addEventListener('resize', onResize);
+			return () => {
+				window.removeEventListener('resize', onResize)
 		};
 	})
 

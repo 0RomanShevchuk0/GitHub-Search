@@ -24,7 +24,7 @@ const UserProfile = (props) => {
 
   return (
     <div className={styles.wrapper}>
-      {userDetails ? (
+      {userDetails && (
         <div className={styles.profile}>
 					<div className={styles.head}>
 						<div className="">
@@ -68,7 +68,7 @@ const UserProfile = (props) => {
 						</div>
 					</div>
 				</div>
-      ) : <Loader />}
+      )}
 			<div className={styles.timer}>
         <Timer
           selectedUser={props.selectedUser}
