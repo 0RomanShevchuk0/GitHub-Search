@@ -8,7 +8,6 @@ import separatorIcon from '../../assets/images/UserProfile/separator.png';
 import locationIcon from '../../assets/images/UserProfile/location.png';
 
 import Timer from "./Timer/Timer";
-import Loader from "../../common/Loader/Loader";
 
 
 const UserProfile = (props) => {

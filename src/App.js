@@ -6,6 +6,7 @@ import burger from './assets/images/Burger/open.png';
 import Search from './Components/Search/Search';
 import UserProfile from './Components/UserProfile/UserProfile';
 import UsersList from './Components/UsersList/UserList';
+import Greeting from './Components/Greeting/Greeting';
 
 
 const App = () => {
@@ -48,7 +49,7 @@ const App = () => {
 	useEffect(() => {
 		let windowWidth = window.innerWidth;
 		const onResize = () => {
-			if(window.innerWidth != windowWidth) {
+			if(window.innerWidth !== windowWidth) {
 				if(window.innerWidth < 768) {
 					console.log('less than 768');
 					setIsBurgerHidden(true);
@@ -87,7 +88,7 @@ const App = () => {
 						/>
 				</div>
 				<div className={styles.userProfile}>
-					{selectedUser && <UserProfile selectedUser={selectedUser} setSelectedUser={setSelectedUser} />}
+					{selectedUser ? <UserProfile selectedUser={selectedUser} setSelectedUser={setSelectedUser} /> : <Greeting />}
 				</div>
 			</div>
     </div>
